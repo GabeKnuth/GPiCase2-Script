@@ -25,8 +25,8 @@ def poweroff():
 	while True:
 		#self.assertEqual(GPIO.input(powerPin), GPIO.LOW)
 		GPIO.wait_for_edge(powerPin, GPIO.FALLING)
-		os.system("sudo killall emulationstation")
-		os.system("sudo killall emulationstatio") #RetroPie 4.6
+		os.system("sudo killall -SIGTERM emulationstation")
+		os.system("sudo killall -SIGTERM emulationstatio") #RetroPie 4.6
 		os.system("sudo sleep 5s")
 		os.system("sudo shutdown -h now")
 def lcdrun():
